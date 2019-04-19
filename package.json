@@ -4,6 +4,7 @@
   "repository": "https://github.com/scrupl/scrupl",
   "license": "MIT",
   "scripts": {
+    "postinstall": "sh scripts/postinstall.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
