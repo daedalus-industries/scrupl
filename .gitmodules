@@ -1,0 +1,3 @@
+[submodule "lib/budgetBox"]
+	path = lib/budgetBox
+	url = https://github.com/JoinColony/budgetBox
