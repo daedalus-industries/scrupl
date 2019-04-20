@@ -8,19 +8,19 @@
 yarn truffle develop
 ```
 
-## Compile Contracts
+### Compile Contracts
 
 ```
 yarn truffle compile
 ```
 
-## Migrate Contracts
+### Migrate Contracts
 
 ```
 yarn truffle migrate
 ```
 
-## Test Contracts
+### Test Contracts
 
 ```
 yarn truffle test
@@ -34,19 +34,19 @@ yarn truffle test
 yarn ganache-cli
 ```
 
-## Migrate Contracts
+### Migrate Contracts
 
 ```
 yarn truffle migrate
 ```
 
-## Start Trufflepig
+### Start Trufflepig
 
 ```
 yarn trufflepig
 ```
 
-## Serve Application
+### Serve Application
 
 ```
 yarn start
