@@ -8,6 +8,7 @@ class ScruplBoxContainer extends Component {
     super();
     this.state = {
       boxClient: null,
+      budget: null,
       voteCount: null,
     };
     this.handleAddVote = this.handleAddVote.bind(this);
@@ -16,7 +17,8 @@ class ScruplBoxContainer extends Component {
   async componentDidMount() {
     const boxClient = await getInstance('ScruplBox');
     const voteCount = await boxClient.numVotes();
-    this.setState({ boxClient, voteCount });
+    const budget = await boxClient.getBudget();
+    this.setState({ boxClient, budget, voteCount });
   }
 
   async handleAddVote(vote) {
@@ -32,6 +34,7 @@ class ScruplBoxContainer extends Component {
     return (
       <ScruplBox
         address={this.state.boxClient.address}
+        budget={this.state.budget}
         handleAddVote={this.handleAddVote}
         voteCount={this.state.voteCount}
       />

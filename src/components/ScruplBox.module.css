@@ -5,3 +5,11 @@
 .title {
   font-weight: 300;
 }
+
+.form {
+  padding: 0.5rem;
+}
+
+.form button {
+  margin-right: 0.5rem;
+}

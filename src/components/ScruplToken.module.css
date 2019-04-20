@@ -5,3 +5,12 @@
 .title {
   font-weight: 300;
 }
+
+.form {
+  padding: 0.5rem;
+}
+
+.field label {
+  display: block;
+  padding: 0.5rem 0;
+}

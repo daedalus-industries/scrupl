@@ -7,10 +7,13 @@ class ScruplNFTContainer extends Component {
   constructor() {
     super();
     this.state = {
+      mintData: {},
       name: null,
       symbol: null,
       tokenClient: null,
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleMint = this.handleMint.bind(this);
   }
 
   async componentDidMount() {
@@ -20,6 +23,17 @@ class ScruplNFTContainer extends Component {
     this.setState({ name, symbol, tokenClient });
   }
 
+  handleChange(event) {
+    let state = this.state
+    state.mintData[event.target.id] = event.target.value
+    this.setState({ ...state })
+  }
+
+  async handleMint(event) {
+    await this.state.tokenClient.mint(this.state.mintData.to, this.state.mintData.tokenId);
+    this.setState({ mintData: {} });
+  }
+
   render() {
     if (!this.state.tokenClient) {
       return <p>{'loading...'}</p>;
@@ -27,6 +41,9 @@ class ScruplNFTContainer extends Component {
     return (
       <ScruplNFT
         address={this.state.tokenClient.address}
+        handleChange={this.handleChange}
+        handleMint={this.handleMint}
+        mintData={this.state.mintData}
         name={this.state.name}
         symbol={this.state.symbol}
       />

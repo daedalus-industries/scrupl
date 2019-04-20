@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './ScruplToken.module.css';
 
-const ScruplToken = ({ address, name, symbol, totalSupply }) => (
+const ScruplToken = ({
+  address,
+  handleChange,
+  mintData,
+  name,
+  symbol,
+  totalSupply,
+}) => (
   <div className={styles.container}>
     <h2 className={styles.title}>
       {'ScruplToken'}
@@ -18,6 +25,33 @@ const ScruplToken = ({ address, name, symbol, totalSupply }) => (
     <p>
       {'Total Supply: ' + totalSupply}
     </p>
+    <div className={styles.form}>
+      <h3 className={styles.title}>
+        {'Mint Tokens'}
+      </h3>
+      <div className={styles.field}>
+        <label htmlFor="to">
+          {'To:'}
+        </label>
+        <input
+          id="to"
+          onChange={handleChange}
+          type="string"
+          value={mintData.to}
+        />
+      </div>
+      <div className={styles.field}>
+        <label htmlFor="value">
+          {'Value:'}
+        </label>
+        <input
+          id="value"
+          onChange={handleChange}
+          type="number"
+          value={mintData.value}
+        />
+      </div>
+    </div>
   </div>
 );
 
