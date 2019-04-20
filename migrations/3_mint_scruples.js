@@ -1,3 +1,5 @@
+/*global artifacts*/
+
 var ScruplNFT = artifacts.require("./ScruplNFT.sol");
 
 module.exports = async (deployer, network, accounts) => {

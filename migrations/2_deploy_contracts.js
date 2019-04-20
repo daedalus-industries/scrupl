@@ -1,3 +1,5 @@
+/*global artifacts*/
+
 var ScruplBox = artifacts.require("./ScruplBox.sol");
 var ScruplNFT = artifacts.require("./ScruplNFT.sol");
 var ScruplToken = artifacts.require("./ScruplToken.sol");
