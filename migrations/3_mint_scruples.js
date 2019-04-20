@@ -10,6 +10,5 @@ module.exports = async (deployer, network, accounts) => {
   await scruple.mint(accounts[3], 3);
   await scruple.mint(accounts[4], 4);
   await scruple.mint(accounts[5], 5);
-  await scruple.mint(accounts[6], 6);
 
 };
