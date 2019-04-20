@@ -6,9 +6,6 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol";
 contract ScruplNFT is ERC721Full, ERC721Mintable {
 
   // solhint-disable-next-line no-empty-blocks
-    constructor() public ERC721Full("Scruple moral NFTs", "SRCRUPL") {
-    }
-
-
+  constructor() public ERC721Full("Scrupl moral NFTs", "SRCRUPL") {}
 
 }

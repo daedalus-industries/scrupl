@@ -1,7 +1,7 @@
-var Scruples = artifacts.require("./Scruples.sol");
+var ScruplNFT = artifacts.require("./ScruplNFT.sol");
 
 module.exports = async (deployer, network, accounts) => {
-  const scruple = await Scruples.deployed();
+  const scruple = await ScruplNFT.deployed();
 
   await scruple.mint(accounts[1], 1);
   await scruple.mint(accounts[2], 2);
