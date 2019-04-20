@@ -1,7 +1,10 @@
 import React from 'react';
+import ScruplBox from '../containers/ScruplBox';
+import ScruplNFT from '../containers/ScruplNFT';
+import ScruplToken from '../containers/ScruplToken';
 import styles from './App.module.css';
 
-const App = ({ handleClick, test }) => (
+const App = () => (
   <div className={styles.container}>
     <header className={styles.header}>
       <h1 className={styles.title}>
@@ -9,12 +12,9 @@ const App = ({ handleClick, test }) => (
       </h1>
     </header>
     <main>
-      <p>
-        {test}
-      </p>
-      <button onClick={handleClick}>
-        {'Test'}
-      </button>
+      <ScruplBox />
+      <ScruplNFT />
+      <ScruplToken />
     </main>
   </div>
 );
