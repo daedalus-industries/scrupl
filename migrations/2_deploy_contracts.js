@@ -1,5 +1,5 @@
-var Scrupl = artifacts.require("./Scrupl.sol");
+var Scrupl = artifacts.require("./ScruplBox.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(Scrupl);
+  deployer.deploy(ScruplBox);
 };

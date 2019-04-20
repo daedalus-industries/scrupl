@@ -3,7 +3,7 @@ pragma experimental "v0.5.0";
 
 import "lib/BudgetBox/contracts/BudgetBox.sol";
 
-contract Scrupl {
+contract ScruplBox {
 
   // Create contract
   constructor() public {}
