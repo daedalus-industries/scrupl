@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Update submodule
+git submodule update --init
+
+# Remove build directory
+rm -rf build
+
 # Move to budgetBox
 cd lib/budgetBox
 
