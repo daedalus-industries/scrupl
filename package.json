@@ -9,8 +9,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:chain": "ganache-cli",
-    "migrate:local": "truffle migrate --network local"
+    "start:blockchain": "ganache-cli --acctKeys ./accounts.json",
+    "start:trufflepig": "trufflepig --ganacheKeyFile ./accounts.json",
+    "contracts:compile": "truffle compile",
+    "contracts:migrate": "truffle migrate",
+    "contracts:test": "truffle test"
   },
   "eslintConfig": {
     "extends": "react-app"
