@@ -6,12 +6,18 @@ class ScruplNFTContainer extends Component {
 
   constructor() {
     super();
-    this.state = { tokenClient: null };
+    this.state = {
+      name: null,
+      symbol: null,
+      tokenClient: null,
+    };
   }
 
   async componentDidMount() {
     const tokenClient = await getInstance('ScruplNFT');
-    this.setState({ tokenClient });
+    const name = await tokenClient.name();
+    const symbol = await tokenClient.symbol();
+    this.setState({ name, symbol, tokenClient });
   }
 
   render() {
@@ -19,7 +25,11 @@ class ScruplNFTContainer extends Component {
       return <p>{'loading...'}</p>;
     }
     return (
-      <ScruplNFT address={this.state.tokenClient.address} />
+      <ScruplNFT
+        address={this.state.tokenClient.address}
+        name={this.state.name}
+        symbol={this.state.symbol}
+      />
     );
   }
 

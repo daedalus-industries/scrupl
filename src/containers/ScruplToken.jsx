@@ -6,12 +6,20 @@ class ScruplTokenContainer extends Component {
 
   constructor() {
     super();
-    this.state = { tokenClient: null };
+    this.state = {
+      name: null,
+      symbol: null,
+      tokenClient: null,
+      totalSupply: null,
+    };
   }
 
   async componentDidMount() {
     const tokenClient = await getInstance('ScruplToken');
-    this.setState({ tokenClient });
+    const name = await tokenClient.name();
+    const symbol = await tokenClient.symbol();
+    const totalSupply = await tokenClient.totalSupply();
+    this.setState({ name, symbol, tokenClient, totalSupply });
   }
 
   render() {
@@ -19,7 +27,12 @@ class ScruplTokenContainer extends Component {
       return <p>{'loading...'}</p>;
     }
     return (
-      <ScruplToken address={this.state.tokenClient.address} />
+      <ScruplToken
+        address={this.state.tokenClient.address}
+        name={this.state.name}
+        symbol={this.state.symbol}
+        totalSupply={this.state.totalSupply}
+      />
     );
   }
 
