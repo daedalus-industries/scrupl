@@ -14,15 +14,18 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "@colony/colony-js-contract-loader-http": "^1.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "truffle": "^5.0.13"
+    "truffle-contract": "^4.0.12",
+    "web3": "1.0.0-beta.37"
   },
   "devDependencies": {
     "ganache-cli": "^6.4.3",
     "openzeppelin-solidity": "^2.2.0",
     "react-scripts": "2.1.8",
-    "truffle": "^5.0.13"
+    "truffle": "^5.0.13",
+    "trufflepig": "^1.1.2"
   },
   "browserslist": [
     ">0.2%",
