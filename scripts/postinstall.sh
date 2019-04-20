@@ -15,5 +15,8 @@ npm install
 # Compile contracts
 ./node_modules/truffle/build/cli.bundled.js compile
 
+# Remove any existing built contracts
+rm -R ../../build/
+
 # Move built conracts
 mv build ../../
