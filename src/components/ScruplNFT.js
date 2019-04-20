@@ -33,7 +33,7 @@ const ScruplNFT = ({
         <input
           id="to"
           onChange={handleChange}
-          type="string"
+          type="text"
           value={mintData.to}
         />
       </div>
@@ -44,9 +44,14 @@ const ScruplNFT = ({
         <input
           id="tokenId"
           onChange={handleChange}
-          type="string"
+          type="text"
           value={mintData.tokenId}
         />
+      </div>
+      <div className={styles.field}>
+        <button onClick={handleMint}>
+          {'Mint Tokens'}
+        </button>
       </div>
     </div>
   </div>

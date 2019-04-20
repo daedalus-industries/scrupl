@@ -10,6 +10,15 @@
   padding: 0.5rem;
 }
 
+.field {
+  padding: 0.5rem 0;
+}
+
+.field label {
+  display: block;
+  padding: 0.25rem 0;
+}
+
 .form button {
   margin-right: 0.5rem;
 }

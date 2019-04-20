@@ -4,6 +4,7 @@ import styles from './ScruplToken.module.css';
 const ScruplToken = ({
   address,
   handleChange,
+  handleMint,
   mintData,
   name,
   symbol,
@@ -36,7 +37,7 @@ const ScruplToken = ({
         <input
           id="to"
           onChange={handleChange}
-          type="string"
+          type="text"
           value={mintData.to}
         />
       </div>
@@ -50,6 +51,11 @@ const ScruplToken = ({
           type="number"
           value={mintData.value}
         />
+      </div>
+      <div className={styles.field}>
+        <button onClick={handleMint}>
+          {'Mint Tokens'}
+        </button>
       </div>
     </div>
   </div>

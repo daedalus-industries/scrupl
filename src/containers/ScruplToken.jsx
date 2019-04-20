@@ -7,7 +7,7 @@ class ScruplTokenContainer extends Component {
   constructor() {
     super();
     this.state = {
-      mintData: {},
+      mintData: { to: '', value: 0 },
       name: null,
       symbol: null,
       tokenClient: null,

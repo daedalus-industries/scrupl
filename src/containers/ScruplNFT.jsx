@@ -7,7 +7,7 @@ class ScruplNFTContainer extends Component {
   constructor() {
     super();
     this.state = {
-      mintData: {},
+      mintData: { to: '', tokenId: 0 },
       name: null,
       symbol: null,
       tokenClient: null,
