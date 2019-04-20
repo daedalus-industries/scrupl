@@ -6,12 +6,23 @@ class ScruplBoxContainer extends Component {
 
   constructor() {
     super();
-    this.state = { boxClient: null };
+    this.state = {
+      boxClient: null,
+      voteCount: null,
+    };
+    this.handleAddVote = this.handleAddVote.bind(this);
   }
 
   async componentDidMount() {
     const boxClient = await getInstance('ScruplBox');
-    this.setState({ boxClient });
+    const voteCount = await boxClient.numVotes();
+    this.setState({ boxClient, voteCount });
+  }
+
+  async handleAddVote(vote) {
+    await this.state.boxClient.addVote(vote);
+    const voteCount = await this.state.boxClient.numVotes();
+    this.setState({ voteCount })
   }
 
   render() {
@@ -19,7 +30,11 @@ class ScruplBoxContainer extends Component {
       return <p>{'loading...'}</p>;
     }
     return (
-      <ScruplBox address={this.state.boxClient.address} />
+      <ScruplBox
+        address={this.state.boxClient.address}
+        handleAddVote={this.handleAddVote}
+        voteCount={this.state.voteCount}
+      />
     );
   }
 

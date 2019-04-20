@@ -10,6 +10,7 @@ export const getInstance = async contractName => {
   const { abi, address } = await loader.load({ contractName });
   const contract = truffleContract({ abi });
   contract.setProvider(web3.currentProvider);
+  contract.defaults({ from: '0x7014af72effc1524885b09115d3297d07d974dd1' });
   return contract.at(address);
 
 }
