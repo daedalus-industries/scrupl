@@ -1,13 +1,7 @@
-pragma solidity ^0.5.2;
+pragma solidity ^0.5.7;
 
 import "lib/budgetBox/contracts/BudgetBox.sol";
 
-contract ScruplBox {
-
-  BudgetBox budgetBox;
-
-  constructor() public {
-    budgetBox = new BudgetBox();
-  }
+contract ScruplBox is BudgetBox {
 
 }
