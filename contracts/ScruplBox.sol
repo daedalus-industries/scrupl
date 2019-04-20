@@ -1,16 +1,12 @@
-pragma solidity ^0.4.24;
-pragma experimental "v0.5.0";
+pragma solidity ^0.5.2;
 
-import "lib/BudgetBox/contracts/BudgetBox.sol";
+import "lib/budgetBox/contracts/BudgetBox.sol";
 
-contract ScruplBox {
+contract ScruplBox is BudgetBox {
 
   // Create contract
   constructor() public {}
 
-  // Test function
-  function test() public pure returns (string) {
-    return 'ScRuPl';
-  }
+
 
 }
