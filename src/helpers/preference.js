@@ -14,7 +14,7 @@ export const updatePreference = (preference, projects, selected) => {
   console.log(pos);
 
 // Was the larger number preferred?
-  var betterj = ( selected == j ) ? 1 : 0;
+  var betterj = ( selected === j ) ? 1 : 0;
 
 // If so, it'll be 11, if not, 10 (in binary)
   var pref = betterj ? 3 : 2;
