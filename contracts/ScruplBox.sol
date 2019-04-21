@@ -11,7 +11,7 @@ contract ScruplBox is BudgetBox {
   ScruplToken scruplToken;
 
   // TEMPORARY
-  uint256 tokenId = 1;
+  uint256 tokenId = 0;
   uint256 MIN_INDULGENCE = 1000;
 
   event SinAbsolved(uint256 _value, uint256 indexed _tokenId);
@@ -31,6 +31,7 @@ contract ScruplBox is BudgetBox {
     if (voteArray.length >= MAX_VOTES) loadVotesToBBoxStorage();
     scruplToken.burnFrom(msg.sender, _value);
     scruplNFT.safeTransferFrom(address(this), msg.sender, tokenId);
+    tokenId += 1;
     emit SinAbsolved(_value, tokenId);
   }
 
