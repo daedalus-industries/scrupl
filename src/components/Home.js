@@ -6,13 +6,19 @@ const Home = ({
   handleChange,
   handleSelect,
   handleSubmit,
+  preference,
   projects,
   selected,
   voteData,
 }) => (
   <main className={styles.container}>
-    <div className={styles.balance}>
-      {'Scrupl Tokens: ' + balance}
+    <div className={styles.inforamtion}>
+      <div>
+        {'Scrupl Tokens: ' + balance}
+      </div>
+      <div>
+        {'Preference: ' + preference}
+      </div>
     </div>
     <div className={styles.itemContainer}>
       <button className={styles.item} onClick={() => handleSelect(projects[0])}>

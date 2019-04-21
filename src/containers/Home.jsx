@@ -12,7 +12,7 @@ class HomeContainer extends Component {
       boxClient: null,
       projects: null,
       selected: null,
-      preference: parseInt(0, 2),
+      preference: 0,
       voteData: {
         value: 0,
       },
@@ -77,6 +77,7 @@ class HomeContainer extends Component {
         handleChange={this.handleChange}
         handleSelect={this.handleSelect}
         handleSubmit={this.handleSubmit}
+        preference={this.state.preference}
         projects={this.state.projects}
         selected={this.state.selected}
         voteData={this.state.voteData}
