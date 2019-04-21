@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from '../components/Home';
-import { getInstance } from '../helpers/contract';
+import { getAccounts, getInstance } from '../helpers/contract';
 import { updatePreference } from '../helpers/preference';
 
 class HomeContainer extends Component {
@@ -8,6 +8,7 @@ class HomeContainer extends Component {
   constructor() {
     super();
     this.state = {
+      balance: null,
       boxClient: null,
       projects: null,
       selected: null,
@@ -22,10 +23,13 @@ class HomeContainer extends Component {
   }
 
   async componentDidMount() {
+    const accounts = await getAccounts();
     const boxClient = await getInstance('ScruplBox');
+    const tokenClient = await getInstance('ScruplToken');
+    const balance = await tokenClient.balanceOf(accounts[0][0]);
     const voteCount = await boxClient.numVotes();
     const projects = this.randomizeProjects();
-    this.setState({ boxClient, projects, voteCount });
+    this.setState({ balance, boxClient, projects, voteCount });
   }
 
   randomizeProjects() {
@@ -39,15 +43,11 @@ class HomeContainer extends Component {
   }
 
   async handleSubmit() {
-    const submission = this.state.preference;
-
     console.log('value', this.state.voteData.value);
     console.log('preference', this.state.preference);
-    console.log('submission', submission);
-
     await this.state.boxClient.buyIndulgence(
       this.state.voteData.value,
-      submission,
+      this.state.preference,
     );
   }
 
@@ -73,6 +73,7 @@ class HomeContainer extends Component {
     }
     return (
       <Home
+        balance={this.state.balance}
         handleChange={this.handleChange}
         handleSelect={this.handleSelect}
         handleSubmit={this.handleSubmit}

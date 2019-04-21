@@ -2,9 +2,14 @@
   width: 100vw;
 }
 
+.balance {
+  padding-top: 4rem;
+  text-align: center;
+}
+
 .itemContainer {
   display: flex;
-  margin: 5rem auto;
+  margin: 4rem auto;
   width: 80vw;
 }
 
@@ -25,6 +30,11 @@
 
 .field {
   margin: 0.5rem auto;
+}
+
+.field label {
+  display: block;
+  padding: 0.25rem 0;
 }
 
 .form button {
