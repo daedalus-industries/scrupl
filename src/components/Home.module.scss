@@ -1,0 +1,32 @@
+.container {
+  width: 100vw;
+}
+
+.itemContainer {
+  display: flex;
+  margin: 5rem auto;
+  width: 80vw;
+}
+
+.item {
+  border-radius: 5px;
+  box-shadow: 0 0 5px #AAA;
+  display: flex;
+  margin: 0 auto;
+  padding: 5rem 10rem;
+}
+
+.form {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100vw;
+}
+
+.field {
+  margin: 0.5rem auto;
+}
+
+.form button {
+  margin: 0.5rem auto;
+}

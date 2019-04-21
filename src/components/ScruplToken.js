@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ScruplToken.module.css';
+import styles from './ScruplToken.module.scss';
 
 const ScruplToken = ({
   address,

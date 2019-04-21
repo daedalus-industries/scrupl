@@ -1,0 +1,30 @@
+.header {
+  background: #199;
+  box-shadow: 1px 5px 0 #199;
+  padding: 1rem;
+}
+
+.logo {
+  color: #FEFEFE;
+  font-size: 2rem;
+}
+
+.title {
+  color: #FEFEFE;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.link {
+  color: #FEFEFE;
+  padding: 0 1rem;
+}
+
+.nav {
+  display: flex;
+  float: right;
+  padding: 1rem;
+}

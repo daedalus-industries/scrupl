@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ScruplBox.module.css';
+import styles from './ScruplBox.module.scss';
 
 const ScruplBox = ({
   address,

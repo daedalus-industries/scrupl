@@ -1,21 +1,21 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom'
+import Header from './Header';
+import Home from '../containers/Home';
 import ScruplBox from '../containers/ScruplBox';
 import ScruplNFT from '../containers/ScruplNFT';
 import ScruplToken from '../containers/ScruplToken';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 const App = () => (
   <div className={styles.container}>
-    <header className={styles.header}>
-      <h1 className={styles.title}>
-        {'scrupl'}
-      </h1>
-    </header>
-    <main>
-      <ScruplBox />
-      <ScruplNFT />
-      <ScruplToken />
-    </main>
+    <Header />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/ScruplBox" component={ScruplBox} />
+      <Route exact path="/ScruplNFT" component={ScruplNFT} />
+      <Route path="/ScruplToken" component={ScruplToken} />
+    </Switch>
   </div>
 );
 

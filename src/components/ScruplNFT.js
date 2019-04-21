@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ScruplNFT.module.css';
+import styles from './ScruplNFT.module.scss';
 
 const ScruplNFT = ({
   address,
