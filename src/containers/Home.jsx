@@ -47,13 +47,15 @@ class HomeContainer extends Component {
   }
 
   async handleSubmit() {
+    const submission = this.state.preference.flat().join('');
 
     console.log('value', this.state.voteData.value);
     console.log('preference', this.state.preference);
+    console.log('submission', submission);
 
     await this.state.boxClient.buyIndulgence(
       this.state.voteData.value,
-      this.state.preference,
+      submission,
     );
   }
 
@@ -70,7 +72,7 @@ class HomeContainer extends Component {
       selected,
     );
     const projects = this.randomizeProjects();
-    this.setState({ preference, projects, selected });
+    this.setState({ preference, projects });
   }
 
   render() {

@@ -4,7 +4,7 @@ import styles from './Home.module.scss';
 const Home = ({
   handleChange,
   handleSelect,
-  handleVote,
+  handleSubmit,
   projects,
   selected,
   voteData,
@@ -30,7 +30,7 @@ const Home = ({
           value={voteData.value}
         />
       </div>
-      <button onClick={handleVote}>
+      <button onClick={handleSubmit}>
         {'Submit Vote'}
       </button>
     </div>
