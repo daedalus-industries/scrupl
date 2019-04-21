@@ -11,15 +11,7 @@ class HomeContainer extends Component {
       boxClient: null,
       projects: null,
       selected: null,
-      preference: [
-        [0, 0], // position 0
-        [0, 0], // position 1
-        [0, 0], // position 2
-        [0, 0], // position 3
-        [0, 0], // position 4
-        [0, 0], // position 5
-        [0, 0], // position 6
-      ],
+      preference: parseInt(0, 2),
       voteData: {
         value: 0,
       },
@@ -47,7 +39,7 @@ class HomeContainer extends Component {
   }
 
   async handleSubmit() {
-    const submission = this.state.preference.flat().join('');
+    const submission = this.state.preference;
 
     console.log('value', this.state.voteData.value);
     console.log('preference', this.state.preference);
